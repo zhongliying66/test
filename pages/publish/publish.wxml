@@ -1,0 +1,39 @@
+<!--pages/publish/publish.wxml-->
+<view wx:if="{{!sur}}">
+<view class="row">
+<label>我的地址:</label>
+<view bindtap="getAddress" >{{address}}</view>
+</view>
+
+<view class="row">
+<label>类型:</label>
+<view>
+<radio-group class="radio-group" bindchange="radioChange">
+   <radio value="buy" />求购
+    <radio value="sell" checked="true"/>转让
+    </radio-group>
+</view>
+</view>
+
+<view class="row">
+<label>说明:</label>
+<input placeholder='填写您的具体要求' bindinput='describtion'></input>
+</view>
+
+<view class="row">
+<label>联系方式:</label>
+<input placeholder='填写您的联系方式' bindinput='telphone'></input>
+</view>
+
+<button bindtap="save" class="btn">发布消息</button>
+
+</view>
+
+<view wx:if="{{sur}}">
+ <icon type="success" size="20" />发布成功
+ <button bindtap='go'>返回首页</button>
+</view>
+
+<view>
+<my />
+</view>

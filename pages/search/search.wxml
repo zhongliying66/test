@@ -1,0 +1,10 @@
+<!--pages/search/search.wxml-->
+<view class='search'>
+  <input bindinput="input"></input>
+  <button bindtap="search">搜索</button>
+</view>
+<view>
+    <view wx:for="{{list}}" wx:key="{{item.id}}">
+        <view bindtap="go" id="{{item.id}}" >{{item.address}} -- {{item.type}}--{{item.describ}}--{{item.phon}}</view>
+    </view>
+</view> 
